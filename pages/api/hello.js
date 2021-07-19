@@ -1,7 +1,9 @@
 export default async function handler(req, res) {
 
-  console.log(req.connection.remoteAddress)
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
-  res.status(200).json({ message: 'ok', ip: req.connection.remoteAddress })
+  console.log(ip)
+
+  res.status(200).json({ message: 'ok', ip: ip })
 
 }

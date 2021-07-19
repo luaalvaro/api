@@ -5,8 +5,6 @@ export default function Home() {
 
     const { user, setUser } = useContext(AuthContext)
 
-    console.log(user)
-
     return (
         <>
             <p>Seu nome é: {user.name}</p>
